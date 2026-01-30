@@ -1,0 +1,15 @@
+{
+  "name": "frugal-registration",
+  "version": "1.0.0",
+  "description": "Registration form with client-side validation and Playwright automation",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "serve": "npx serve . -l 3000"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "serve": "^14.2.4"
+  }
+}

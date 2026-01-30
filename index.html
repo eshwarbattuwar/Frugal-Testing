@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | Frugal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="form-header">
+      <h1>Create your account</h1>
+      <p class="subtitle">Join us with a few details</p>
+    </header>
+
+    <div id="form-alert" class="form-alert" role="alert" aria-live="polite" hidden></div>
+
+    <form id="registration-form" class="registration-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name <span class="required">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="Enter first name" autocomplete="given-name">
+          <span class="error-msg" id="firstName-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name <span class="required">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="Enter last name" autocomplete="family-name">
+          <span class="error-msg" id="lastName-error"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="error-msg" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" autocomplete="tel">
+          <span class="error-msg" id="phone-error"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="1" max="120" placeholder="Age" autocomplete="off">
+          <span class="error-msg" id="age-error"></span>
+        </div>
+        <div class="form-group form-group-gender">
+          <fieldset>
+            <legend>Gender <span class="required">*</span></legend>
+            <div class="gender-options">
+              <label class="checkbox-label">
+                <input type="checkbox" name="gender" value="male" id="gender-male"> Male
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gender" value="female" id="gender-female"> Female
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="gender" value="other" id="gender-other"> Other
+              </label>
+            </div>
+            <span class="error-msg" id="gender-error"></span>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="2" placeholder="Street, apartment, suite..." autocomplete="street-address"></textarea>
+        <span class="error-msg" id="address-error"></span>
+      </div>
+
+      <div class="form-row three-cols">
+        <div class="form-group">
+          <label for="country">Country <span class="required">*</span></label>
+          <select id="country" name="country" required>
+            <option value="">Select country</option>
+          </select>
+          <span class="error-msg" id="country-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="state">State <span class="required">*</span></label>
+          <select id="state" name="state" required disabled>
+            <option value="">Select state</option>
+          </select>
+          <span class="error-msg" id="state-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="city">City <span class="required">*</span></label>
+          <select id="city" name="city" required disabled>
+            <option value="">Select city</option>
+          </select>
+          <span class="error-msg" id="city-error"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="password">Password <span class="required">*</span></label>
+          <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password">
+          <div class="password-strength" id="password-strength-container">
+            <div class="strength-bar" id="strength-bar"></div>
+            <span class="strength-label" id="strength-label">Password strength</span>
+          </div>
+          <span class="error-msg" id="password-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" autocomplete="new-password">
+          <span class="error-msg" id="confirmPassword-error"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label terms-label">
+          <input type="checkbox" id="terms" name="terms" required>
+          I agree to the <a href="#" onclick="return false;">Terms &amp; Conditions</a> <span class="required">*</span>
+        </label>
+        <span class="error-msg" id="terms-error"></span>
+      </div>
+
+      <button type="submit" id="submit-btn" class="submit-btn" disabled>Submit Registration</button>
+    </form>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
